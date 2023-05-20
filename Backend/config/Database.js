@@ -14,4 +14,28 @@ export const signUp = async(req,res)=>{
     } catch{
         res.status(500).send({msg : "Sign Up Failed"})
     }
-};
+}
+
+export const login = async(req,res)=>{
+    const username = req.body.username
+    const password = req.body.password
+    const finduserbyname = (username,cb)=>{
+        return db.get(`SELECT * FROM users WHERE username=?`,[username],(err,row)=>{
+            cb(err,row)
+        })
+    }
+    finduserbyname(username,(err,user)=>{
+        if(err)return res.status(500).send("Server Error!")
+        else if(!user) return res.status(404).send("Login Failed!")
+        else{
+            const result = bcrypt.compareSync(password,user.password)
+            if(!result) return res.status(401).send("Login Failed!")
+            else{
+                res.status(200)
+                res.send("Login Success!")
+            }
+        }
+    })
+}
+
+export default db;
