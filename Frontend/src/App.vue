@@ -1,10 +1,10 @@
 <script>
 import Navbar from './components/Navbar.vue'
-import Home from './components/product/Home.vue'
+import Route from './route/route.vue'
 export default {
   components: {
     Navbar,
-    Home
+    Route,
   }
 }
 </script>
@@ -12,6 +12,6 @@ export default {
 <template>
   <div>
     <Navbar></Navbar>
-    <Home></Home>
+    <Route></Route>
   </div>
 </template>
