@@ -39,6 +39,16 @@ export const login = async(req,res)=>{
     })
 }
 
+export const getUser = (req, res) => {
+    db.all('SELECT * FROM users', (err, result) => {
+        if(err){
+            res.status(404).send(console.log(err));
+        }else{
+            res.send(result);
+        }
+    })
+}
+
 export const getShoes = (req, res) => {
     db.all('SELECT * FROM shoes', (err, result) => {
         if(err){
