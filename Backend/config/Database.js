@@ -1,4 +1,5 @@
 import sqlite3 from "sqlite3";
+import path from 'path';
 import bcrypt from 'bcrypt';
 
 const db = new sqlite3.Database('mydata.db');
@@ -34,6 +35,35 @@ export const login = async(req,res)=>{
                 res.status(200)
                 res.send("Login Success!")
             }
+        }
+    })
+}
+
+export const getShoes = (req, res) => {
+    db.all('SELECT * FROM shoes', (err, result) => {
+        if(err){
+            res.status(404).send(console.log(err));
+        }else{
+            res.send(result);
+        }
+    })
+}
+
+export const saveShoe =  (req, res) => {
+    if(req.file === null) return res.status(400).json({msg : 'No File Uploaded'})
+
+    const name = req.body.name;
+    const file = req.files.file;
+    const ext = path.extname(file.name);
+    const fileName = file.md5 + ext;
+    const url = `${req.protocol}://${req.get('host')}/images/${fileName}`;
+    const price = req.body.price;
+
+    file.mv(`./public/images/${fileName}`, async(err) => {
+        if(err) return res.status(500).json({msg: err.message});
+        else{
+            db.run("INSERT INTO shoes VALUES (?, ?, ?, ?, ?)", [, name, fileName, url, price])
+            res.status(201).send("Shoes Added Successfully")
         }
     })
 }
