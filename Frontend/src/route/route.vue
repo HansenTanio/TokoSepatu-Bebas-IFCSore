@@ -1,8 +1,8 @@
 <script>
-  import SignUp from '../components/signup.vue'
+  import SignUp from '../components/signUp.vue'
   import Login from '../components/login.vue'
   import notFound from '../components/notFound.vue'
-  import Home from '../components/product/Home.vue'
+  import Home from '../components/product/home.vue'
   const routes = {
     '': Login,
     'signUp': SignUp,
