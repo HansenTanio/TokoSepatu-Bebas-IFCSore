@@ -1,5 +1,6 @@
 import sqlite3 from "sqlite3";
 import path from 'path';
+import fs from 'fs';
 import bcrypt from 'bcrypt';
 
 const db = new sqlite3.Database('mydata.db');
@@ -76,6 +77,40 @@ export const saveShoe =  (req, res) => {
             res.status(201).send("Shoes Added Successfully")
         }
     })
+}
+
+export const updateShoe = async(req, res) => {
+    db.all(`SELECT * FROM shoes WHERE shoeId = ${req.params.id}`, (err, result) => {
+        if(result.length === 0){
+            res.status(404).json({msg: "No Data Found"});
+            res.end();
+        }else{
+            const name = req.body.name;
+            const file = req.files.file;
+            const ext = path.extname(file.name);
+            const fileName = file.md5 + ext;
+            const url = `${req.protocol}://${req.get('host')}/images/${fileName}`;
+            const price = req.body.price;
+
+            const filePath = `./public/images/${result[0]['image']}`
+            fs.unlinkSync(filePath);
+            file.mv(`./public/images/${fileName}`, async(err) => {
+                if(err) return res.status(500).json({msg: err.message});
+                else{
+                    db.run(`UPDATE shoes set name = ?, image = ?, url = ?, price = ? WHERE shoeId = ?`, 
+                    [name, fileName, url, price, req.params.id], (err, result) => function (err, result) {
+                        if (err) {
+                            res.status(400).json({ "error": res.message })
+                            res.end()
+                        }else{
+                            res.status(200).json({msg: "Data Update Successfully"});
+                        }
+                    });
+                }
+            })
+        }
+    })
+    res.end();
 }
 
 export const deleteShoe = async(req, res) => {
