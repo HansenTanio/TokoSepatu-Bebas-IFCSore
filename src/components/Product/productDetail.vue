@@ -16,11 +16,11 @@ export default {
     <div>
         <div class="card" style="width: 15rem; height: 30rem; margin: 10px;">
             <div class="container"> 
-                <img class="card-img-top" :src=imgUrl alt="Shoe Image">
+                <img class="card-img-top" :src="imgUrl" alt="Shoe Image">
             </div>
             <div class="card-body">
-                <h5 class="card-name" style="font-size: 18px;" :innerHTML="name"></h5>
-                <h5 class="card-text" style="font-size: 25px; font-weight: bold;" >Rp. <span :innerHTML="price"></span></h5>
+                <h5 class="card-name" style="font-weight: bold;" :innerHTML="name"></h5>
+                <h5 class="card-text" style="font-weight: bold;" >Rp. <span :innerHTML="price"></span></h5>
                 <p>&#11088<span :innerHTML="rating"></span> | Terjual <span :innerHTML="sold"></span></p>
             </div>
         </div>

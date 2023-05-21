@@ -5,7 +5,7 @@ export default {
                 username: "",
                 password: ""
             }
-        },
+        },        
         methods: {
             login: function(){
                 if (this.username == "" || this.password == ""){
@@ -13,7 +13,7 @@ export default {
                 }
                 else if(this.username == "ADMIN" && this.password == "ADMIN"){
                     window.alert("Login Success!")
-                    window.location.pathname = 'notFound'
+                    window.location.pathname = 'daftarSepatuAdmin'
                 }
                 else if(this.username && this.password){
                     axios.post("http://localhost:3000/login", {
