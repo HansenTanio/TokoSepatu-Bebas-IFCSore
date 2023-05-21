@@ -4,7 +4,7 @@
             return {
                 username: "",
                 password: "",
-                confirm: "",
+                confirm: ""
             }
         },
         methods: {

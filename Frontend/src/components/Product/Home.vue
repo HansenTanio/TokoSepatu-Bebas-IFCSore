@@ -1,3 +1,26 @@
+<script>
+import productDetail from './productDetail.vue';
+export default {
+    components: {
+        productDetail
+    },
+    data: function () {
+        return {
+            shoeList: [],
+        }
+    },
+    methods: {
+        getData: function(){
+            axios.get("http://localhost:3000/shoes")
+            .then((res) => {
+                this.shoeList = res.data
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+    }
+}
+</script>
 <template>
     <div>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
