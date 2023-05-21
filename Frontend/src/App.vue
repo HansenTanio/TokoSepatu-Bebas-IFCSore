@@ -1,17 +1,17 @@
 <script>
 import Navbar from './components/navbar.vue'
-import ProductList from './components/product/productList.vue';
+import productList from './components/product/productList.vue';
 export default {
   components: {
     Navbar,
-    ProductList
-}
+    productList
+  }
 }
 </script>
 
 <template>
   <div>
     <Navbar></Navbar>
-    <ProductList></ProductList>
+    <productList></productList>
   </div>
 </template>
