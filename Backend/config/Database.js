@@ -78,4 +78,23 @@ export const saveShoe =  (req, res) => {
     })
 }
 
+export const deleteShoe = async(req, res) => {
+    db.all(`SELECT * FROM shoes WHERE shoeId = ${req.params.id}`, (err, result) => {
+        if(result.length === 0){
+            res.status(404).json({msg: "No Data Found"});
+            res.end();
+        }else{
+            const filePath = `./public/images/${result[0]['image']}`
+            fs.unlinkSync(filePath);
+            db.all(`DELETE FROM shoes WHERE shoeId = ${req.params.id}`, (err, result) => {
+                if(err){
+                    res.status(404).send(console.log(err));
+                }else{
+                    res.status(200).json({msg: 'Product Deleted Successfully'})
+                }
+            })
+        }
+    })
+}
+
 export default db;
