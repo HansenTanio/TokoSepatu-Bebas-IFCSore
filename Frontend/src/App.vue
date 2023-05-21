@@ -1,6 +1,6 @@
 <script>
-import Navbar from './components/Navbar.vue'
-import Home from './components/product/Home.vue'
+import Navbar from './components/navbar.vue'
+import Home from './components/product/home.vue'
 export default {
   components: {
     Navbar,
