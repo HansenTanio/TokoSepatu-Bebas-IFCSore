@@ -23,13 +23,13 @@
                     }
                 }).then(() => {
                     window.alert("Berhasil Menambahkan Data!")
-                    window.location.pathname = 'home'
+                    window.location.pathname = 'daftarSepatuAdmin'
                 }).catch((err) => {
                     window.alert(err)
                 });
             },
             kembali: function(){
-                window.location.pathname = 'home'
+                window.location.pathname = 'daftarSepatuAdmin'
             }
         }
     }
