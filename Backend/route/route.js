@@ -5,6 +5,7 @@ import {
     login,
     getUser,
     getShoes,
+    getPopular,
     saveShoe,
     deleteShoe,
 } from "../config/Database.js";
@@ -15,6 +16,7 @@ router.post("/signup", signUp)
 router.post("/login", login)
 router.get("/user", getUser)
 router.get("/shoes", getShoes)
+router.get("/popular", getPopular)
 // router.get("/shoe/:id", getShoeByName)
 router.post("/shoe", saveShoe)
 // router.patch("/shoe/:id", updateShoe)

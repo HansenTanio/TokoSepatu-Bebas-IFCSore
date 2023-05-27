@@ -48,7 +48,9 @@
                     <label for="exampleInputPassword1">Confirm Password</label>
                     <input type="password" class="form-control" id="confirmPassword" v-model="confirm" placeholder=" Confirm Password">
                 </div>
-                <a class="btn text-white" style="background-color: darkorange;" @click="signUp">Submit</a>
+                <a @click="signUp">
+                    <button class="btn text-white" style="background-color: darkorange;">Submit</button>
+                </a>
             </form>
             <p style="color: red;" :innerHTML="msg"></p>
             <p>Sudah punya akun? <a href="/">Login di sini</a></p>

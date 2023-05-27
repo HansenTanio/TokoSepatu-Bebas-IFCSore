@@ -60,6 +60,16 @@ export const getShoes = (req, res) => {
     })
 }
 
+export const getPopular = (req, res) => {
+    db.all('SELECT * FROM shoes LIMIT 3', (err, result) => {
+        if(err){
+            res.status(404).send(console.log(err));
+        }else{
+            res.send(result);
+        }
+    })
+}
+
 export const saveShoe =  (req, res) => {
     if(req.file === null) return res.status(400).json({msg : 'No File Uploaded'})
 

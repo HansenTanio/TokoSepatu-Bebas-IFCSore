@@ -11,7 +11,7 @@ export default {
     },
     methods: {
         getData: function(){
-            axios.get("http://localhost:3000/shoes")
+            axios.get("http://localhost:3000/popular")
             .then((res) => {
                 this.shoeList = res.data
             }).catch((err) => {
@@ -33,19 +33,19 @@ export default {
             </ol>
             <div class="carousel-inner" style="height: 500px; text-align: center;">
                 <div class="carousel-item active" style=" background-color: rgb(254, 172, 208);">
-                    <img style="height: 500px;" src="../../../public/carousel/1.jpg" alt="First slide">
+                    <img style="height: 500px;" src="../../../carousel/1.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item" style=" background-color: rgb(190, 16, 15)  ;">
-                    <img style="height: 500px;" src="../../../public/carousel/4.jfif" alt="Third slide">
+                    <img style="height: 500px;" src="../../../carousel/4.jfif" alt="Third slide">
                 </div>
                 <div class="carousel-item" style=" background-color: rgb(19, 19, 19);">
-                    <img style="height: 500px;" src="../../../public/carousel/2.jpg" alt="Second slide">
+                    <img style="height: 500px;" src="../../../carousel/2.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item" style=" background-color: rgb(227, 115, 29);">
-                    <img style="height: 500px;" src="../../../public/carousel/5.jfif" alt="Third slide">
+                    <img style="height: 500px;" src="../../../carousel/5.jfif" alt="Third slide">
                 </div>
                 <div class="carousel-item" style=" background-color: rgb(150, 150, 150);">
-                    <img style="height: 500px;" src="../../../public/carousel/3.jpg" alt="Third slide">
+                    <img style="height: 500px;" src="../../../carousel/3.jpg" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -60,22 +60,22 @@ export default {
         
         <div class="features">
             <div class="feature">
-                <img src="../../../public/icons/shipping.png" alt="" class="featureIcon">
+                <img src="../../../icons/shipping.png" alt="" class="featureIcon">
                 <span class="featureTitle">FREE ONGKIR</span>
                 <span class="featureDesc">Free Ongkir untuk semua orderan.</span>
             </div>
             <div class="feature">
-                <img class="featureIcon" src="../../../public/icons/return.png" alt="">
+                <img class="featureIcon" src="../../../icons/return.png" alt="">
                 <span class="featureTitle">30 HARI PENGEMBALIAN</span>
                 <span class="featureDesc">Pengembalian dalam 30 hari</span>
             </div>
             <div class="feature">
-                <img class="featureIcon" src="../../../public/icons/gift.png" alt="">
+                <img class="featureIcon" src="../../../icons/gift.png" alt="">
                 <span class="featureTitle">KUPON PEMBELIAN</span>
                 <span class="featureDesc">Beli Kupon untuk mendapatkan promo menarik.</span>
             </div>
             <div class="feature">
-                <img class="featureIcon" src="../../../public/icons/contact.png" alt="">
+                <img class="featureIcon" src="../../../icons/contact.png" alt="">
                 <span class="featureTitle">CONTACT US!</span>
                 <span class="featureDesc">Kontak kami dapat melalui via email.</span>
             </div>
@@ -93,7 +93,7 @@ export default {
         <div class="gallery">
             <div class="galleryItem">
                 <h1 class="galleryTitle">Jadilah Diri Sendiri!</h1>
-                <img src="../../../public/pict/rel.jpg"
+                <img src="../../../pict/rel.jpg"
                     alt="" class="galleryImg">
             </div>
             <div class="galleryItem">
@@ -103,7 +103,7 @@ export default {
             </div>
             <div class="galleryItem">
                 <h1 class="galleryTitle">Ayo Lakukan!</h1>
-                <img src="../../../public/pict/justdoit.jpg"
+                <img src="../../../pict/justdoit.jpg"
                     alt="" class="galleryImg">
             </div>
         </div>
@@ -117,7 +117,7 @@ export default {
                 <h3 class="nsTitleSm">EVENT YANG AKAN MENDATANG</h3>
                 <h1 class="nsTitle">Season Baru</h1>
                 <h1 class="nsTitle">Koleksi Terbaru</h1>
-                <a href="#nav">
+                <a href="/">
                     <button class="nsButton">PILIHLAH GAYA BARU</button>
                 </a>
             </div>
@@ -162,14 +162,14 @@ export default {
                 <div class="footerRightMenu">
                     <h1 class="fMenuTitle">Follow Kami</h1>
                     <div class="fIcons">
-                        <img src="../../../public/icons/instagram.png" alt="" class="fIcon">
-                        <img src="../../../public/icons/facebook.png" alt="" class="fIcon">
-                        <img src="../../../public/icons/whatsapp.png" alt="" class="fIcon">
-                        <img src="../../../public/icons/twitter.png" alt="" class="fIcon">
+                        <img src="../../../icons/instagram.png" alt="" class="fIcon">
+                        <img src="../../../icons/facebook.png" alt="" class="fIcon">
+                        <img src="../../../icons/whatsapp.png" alt="" class="fIcon">
+                        <img src="../../../icons/twitter.png" alt="" class="fIcon">
                     </div>
                 </div>
                 <div class="footerRightMenu">
-                    <span class="copyright"><img src="../../../public/icons/logocopyright.png" alt="" class="logocopy"> Bebas Shop 2023</span>
+                    <span class="copyright"><img src="../../../icons/logocopyright.png" alt="" class="logocopy"> Bebas Shop 2023</span>
                 </div>
             </div>
         </footer>

@@ -4,7 +4,6 @@
             return {
                 name: "",
                 price: "",
-
             }
         },
         methods: {
